@@ -1,0 +1,233 @@
+/* Currency Grid – Neon CE Theme */
+/* Save this as src/currency-grid.css (or any path you prefer) and import it once. */
+
+/* Page + background */
+.ce-page {
+  min-height: 100vh;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+}
+
+.ce-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.ce-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: ce-float 3s ease-in-out infinite;
+}
+
+@keyframes ce-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes ce-neon {
+  0%, 100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.8), 0 0 40px rgba(74, 222, 128, 0.3);
+  }
+}
+
+/* Frame + card */
+.ce-container {
+  position: relative;
+  width: 100%;
+  max-width: 56rem; /* 896px */
+}
+
+.ce-gradient-frame {
+  position: relative;
+  padding: 4px;
+  border-radius: 1rem;
+  background: linear-gradient(45deg, #4ade80, #22c55e, #4ade80);
+  background-size: 300% 300%;
+  animation: ce-neon 3s ease infinite;
+}
+
+.ce-gradient-blur {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: linear-gradient(45deg, #4ade80, #22c55e, #4ade80);
+  background-size: 300% 300%;
+  opacity: 0.75;
+  filter: blur(4px);
+  animation: ce-neon 3s ease infinite;
+}
+
+.ce-card {
+  position: relative;
+  background-color: #000000;
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.ce-card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background-color: #4ade80;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Header */
+.ce-form { position: relative; z-index: 1; }
+.ce-header { text-align: center; margin-bottom: 2rem; }
+.ce-header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+.ce-header p { color: #9ca3af; margin: 0; }
+
+/* Sections */
+.ce-stack { display: flex; flex-direction: column; gap: 2rem; }
+
+.ce-section {
+  background-color: rgba(17, 24, 39, 0.5);
+  border: 1px solid #374151;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.ce-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4ade80;
+  margin: 0 0 1.5rem 0;
+}
+
+.ce-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Grid for inputs */
+.ce-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.ce-label { color: #9CA3AF; font-size: 12px; margin-bottom: 6px; }
+
+.ce-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ce-cell{
+    padding-left: 1rem;
+    color: white;
+    
+}
+
+/* Inputs / selects */
+.ce-input {
+  width: 100%;
+  background-color: #0b0f19;
+  border: 1px solid #374151;
+  color: #ffffff;
+  padding: 0.625rem 0.7rem;
+  border-radius: 8px;
+  outline: none;
+}
+
+.ce-input::placeholder { color: #6b7280; }
+
+.ce-input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+}
+
+.ce-select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #9CA3AF 50%),
+                    linear-gradient(135deg, #9CA3AF 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.ce-readonly { opacity: 0.8; }
+
+.ce-icon { color: #9CA3AF; }
+
+/* Table-like exchange section */
+.ce-table { display: grid; gap: 12px; }
+
+.ce-table-head {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1.2fr 0.5fr;
+  color: #9CA3AF;
+  font-size: 12px;
+  gap: 8px;
+}
+
+.ce-table-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1.2fr 0.5fr;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Buttons */
+.ce-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  margin-left: 1.25rem;
+}
+
+.ce-btn-primary {
+  background-color: #22c55e;
+  color: #000000;
+}
+
+.ce-btn-ghost {
+  background-color: #111827;
+  color: #ffffff;
+  margin-right: 0;
+}
+
+.ce-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ce-submit { align-self: center; }
+
+/* Optional: small-screen horizontal scroll for table */
+@media (max-width: 640px) {
+  .ce-table-head,
+  .ce-table-row { grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr 0.6fr; }
+  .ce-section { padding: 1rem; }
+}
